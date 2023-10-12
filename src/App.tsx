@@ -1,12 +1,22 @@
-import './App.css'
+// App.tsx
+import React from "react";
+import { Provider } from "react-redux";
+import { store } from "./store/index";
+import AnimalComponent from "./components/AnimalComponent";
+import TheChosenAnimal from "./components/TheChosenAnimal";
+import OtherAnimal from "./components/OtherAnimal";
 
-function App() {
-
+const App: React.FC = () => {
   return (
-    <>
-      <div>hello !</div>
-    </>
-  )
-}
+    <Provider store={store}>
+      <div>
+        <h1>Animal App</h1>
+        <TheChosenAnimal />
+        <AnimalComponent />
+        <OtherAnimal />
+      </div>
+    </Provider>
+  );
+};
 
-export default App
+export default App;
